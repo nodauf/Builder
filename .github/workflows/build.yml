@@ -1,0 +1,20 @@
+name:  Build and release
+
+# Trigger on every master branch push and pull request
+on:
+  push:
+    branches:
+      - main
+      - test-github-actions
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Check out the repository to the runner
+        uses: actions/checkout@v4
+      - name: Run script
+        run: .\main.bat
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "*.exe"
