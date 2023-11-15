@@ -4,7 +4,7 @@ CALL config.bat
 :: @param Github repo without the prefix https://github.com/
 :: @param Github repo without the prefix https://github.com/
 set _git_repo=%~1
-set _git_folder=%_git_repo::=_%
+set _git_folder=D:\a\Builder\Builder\%_git_repo::=_%
 ::set _git_folder=%tmp%\%_git_folder:/=_%
 set "hiddenimports= "
 rmdir /s /q %_git_folder%
