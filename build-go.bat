@@ -85,11 +85,11 @@ EXIT /B 0
 		echo %scriptpath%\bin\%_FullnameOutput%.exe >> %_FullnameOutput%.lst7z
 		CALL log.bat "Create %_FullnameOutput%.7z with required files..."
 		7z a -t7z -mhe -p%_7Z_PASSWORD_% %_7Z_OUPUT_%\%_FullnameOutput%.7z @%_FullnameOutput%.lst7z
-		appveyor PushArtifact %_7Z_OUPUT_%\%_FullnameOutput%.7z
+		::appveyor PushArtifact %_7Z_OUPUT_%\%_FullnameOutput%.7z
 	) ELSE (
 		IF "%%_FullnameOutput%_retry%" == "1" (
 			CALL log.bat ERR "FAIL to build a valid %_FullnameOutput%.exe (This bin return %_err%, expected %_errorExpected%)..." 1
-			IF "%BUILDER_THREADING%" == "1" appveyor PushArtifact %_FullnameOutput%.log
+			::IF "%BUILDER_THREADING%" == "1" appveyor PushArtifact %_FullnameOutput%.log
 			EXIT /B 0
 		)
 		CALL log.bat WARN "Build %_FullnameOutput%.exe FAIL with %_err%, Retrying..." 1
