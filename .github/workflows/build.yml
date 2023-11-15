@@ -19,6 +19,10 @@ jobs:
           python-version: 3.7
       - name: Installer pyinstaller
         run: pip install pyinstaller
+      - name: "Update windows SDK"
+        uses: fbactions/setup-winsdk@v1
+        with:
+          winsdk-build-version: 19041
       - name: Run script
         run: .\main.bat
       - name: Release
