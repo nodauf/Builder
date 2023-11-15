@@ -75,12 +75,12 @@ EXIT /B 0
 		echo %scriptpath%\bin\%_outTarget%_%_arch%.exe >> %_outTarget%_%_arch%.lst7z
 		CALL log.bat "Create %_outTarget%_%_arch%.7z with required files..."
 		7z a -t7z -mhe -p%_7Z_PASSWORD_% %_7Z_OUPUT_%\%_outTarget%_%_arch%.7z @%_outTarget%_%_arch%.lst7z
-		appveyor PushArtifact %_7Z_OUPUT_%\%_outTarget%_%_arch%.7z
+		::appveyor PushArtifact %_7Z_OUPUT_%\%_outTarget%_%_arch%.7z
 	) ELSE (
 		IF "%retry%" == "1" (
 			SET retry="0"
 			CALL log.bat ERR "FAIL to build a valid %_outTarget%_%_arch%.exe (This bin return %_err%, expected %_errorExpected%)..." , 1
-			IF EXIST %scriptpath%\bin\%_outTarget%_%_arch%.log appveyor PushArtifact %scriptpath%\bin\%_outTarget%_%_arch%.log
+			::IF EXIST %scriptpath%\bin\%_outTarget%_%_arch%.log appveyor PushArtifact %scriptpath%\bin\%_outTarget%_%_arch%.log
 			EXIT /B 0
 		)
 		CALL log.bat WARN , "Build %_outTarget%_%_arch%.exe FAIL with %_err%, Retrying..." , 1
