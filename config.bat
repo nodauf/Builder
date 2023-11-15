@@ -7,8 +7,8 @@ IF "%scriptpath%" == "" SET scriptpath=%CD%
 IF %scriptpath% == ^%scriptpath^% SET scriptpath=%CD%
 SET PATH=%PATH%;%scriptpath%
 SET pyver=C:\Python38-x64
-SET py64=%pyver%\python.exe
-SET py32=C:\Python38\python.exe
+SET py64=python.exe
+SET py32=python.exe
 SET ENABLE_BUILD_X86=0
 SET "pyscript=%pyver%\scripts"
 SET "PATH=%PATH%;%USERPROFILE%\.cargo\bin"
