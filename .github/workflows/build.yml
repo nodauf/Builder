@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Check out the repository to the runner
         uses: actions/checkout@v4
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
       - name: Run script
         run: .\main.bat
       - name: Release
