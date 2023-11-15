@@ -149,7 +149,7 @@ IF "%_err%" == "%_errorExpected%" (
 	echo Rubeus.exe.config >>Rubeus.lst7z
 	::echo Rubeus.nimcrypt.exe >>Rubeus.lst7z
 	7z a -t7z -mhe -p%_7Z_PASSWORD_% %_7Z_OUPUT_%\Rubeus.7z @Rubeus.lst7z
-	appveyor PushArtifact %_7Z_OUPUT_%\Rubeus.7z
+::	appveyor PushArtifact %_7Z_OUPUT_%\Rubeus.7z
 	copy Rubeus.exe %scriptpath%\bin\Rubeus.exe
 ) else (
 	CALL log.bat ERR "FAIL to build a valid Rubeus.exe (This bin return %_err%, expected %_errorExpected%)..." , 1
@@ -169,7 +169,7 @@ IF "%_err%" == "%_errorExpected%" (
 	CALL log.bat "✅ Build Certify.exe OK" 1
 	echo Certify.exe >Certify.lst7z
 	7z a -t7z -mhe -p%_7Z_PASSWORD_% %_7Z_OUPUT_%\Certify.7z @Certify.lst7z
-	appveyor PushArtifact %_7Z_OUPUT_%\Certify.7z
+::	appveyor PushArtifact %_7Z_OUPUT_%\Certify.7z
 	copy Certify.exe %scriptpath%\bin\Certify.exe
 ) else (
 	CALL log.bat ERR "FAIL to build a valid Certify.exe (This bin return %_err%, expected %_errorExpected%)..." , 1
@@ -192,7 +192,7 @@ IF EXIST rusthound.exe (
 	CALL log.bat "✅ Build rusthound.exe OK" 1
 	echo rusthound.exe >rusthound.lst7z
 	7z a -t7z -mhe -p%_7Z_PASSWORD_% %_7Z_OUPUT_%\rusthound.7z @rusthound.lst7z
-	appveyor PushArtifact %_7Z_OUPUT_%\rusthound.7z
+::	appveyor PushArtifact %_7Z_OUPUT_%\rusthound.7z
 	copy rusthound.exe %scriptpath%\bin\rusthound.exe
 ) else (
 	CALL log.bat ERR "FAIL to build a valid RustHound.exe ..." , 1
@@ -223,7 +223,7 @@ IF EXIST nanodump.x64.exe (
 	echo nanodump_ssp.x86.dll >>nanodump.lst7z
 	
 	7z a -t7z -mhe -p%_7Z_PASSWORD_% %_7Z_OUPUT_%\nanodump.7z @nanodump.lst7z
-	appveyor PushArtifact %_7Z_OUPUT_%\nanodump.7z
+::	appveyor PushArtifact %_7Z_OUPUT_%\nanodump.7z
 	copy nanodump.x64.exe %scriptpath%\bin\nanodump.x64.exe
 ) else (
 	CALL log.bat ERR "FAIL to build a valid nanodump ..." , 1
@@ -266,7 +266,7 @@ IF EXIST KrbRelay\bin\Release\KrbRelay.exe (
 	echo CheckPort\bin\Release\CheckPort.exe           >> KrbRelay.lst7z
 	echo CheckPort\bin\Release\CheckPort.exe.config    >> KrbRelay.lst7z
 	7z a -t7z -mhe -p%_7Z_PASSWORD_% %_7Z_OUPUT_%\KrbRelay.7z @KrbRelay.lst7z
-	appveyor PushArtifact %_7Z_OUPUT_%\KrbRelay.7z
+::	appveyor PushArtifact %_7Z_OUPUT_%\KrbRelay.7z
 	copy KrbRelay\bin\Release\* %scriptpath%\bin\
 	copy CheckPort\bin\Release\* %scriptpath%\bin\
 ) else (
