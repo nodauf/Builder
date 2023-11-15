@@ -31,6 +31,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            "./**/*.7z"
-            "./**/*.log"
+            "D:/a/Builder/**/*.7z"
+             "D:/a/Builder/**/*.log"
           tag_name: "${{ github.event.head_commit.message }}"
