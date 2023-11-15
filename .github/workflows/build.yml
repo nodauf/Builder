@@ -8,6 +8,8 @@ on:
       - test-github-actions
 jobs:
   build:
+    permissions:
+      contents: write # to upload release asset (softprops/action-gh-release)
     runs-on: windows-2019
     steps:
       - name: Check out the repository to the runner
