@@ -74,7 +74,7 @@ import tstool
 import wmiexec
 import wmipersist
 import wmiquery
-
+from impacket.examples.ntlmrelayx.clients import ProtocolClient
 
 
 runpy.run_module(bin, run_name='__main__')
