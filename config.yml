@@ -343,6 +343,15 @@ Certipy:
             py: certipy\entry
             errorExpected: 0
             hiddenimports: aardwolf cryptography cffi cryptography.hazmat.backends.openssl cryptography.hazmat.bindings._openssl unicrypto unicrypto.backends.pycryptodome.DES  unicrypto.backends.pycryptodome.TDES unicrypto.backends.pycryptodome.AES unicrypto.backends.pycryptodome.RC4 unicrypto.backends.pure.DES unicrypto.backends.pure.TDES unicrypto.backends.pure.AES unicrypto.backends.pure.RC4 unicrypto.backends.cryptography.DES unicrypto.backends.cryptography.TDES unicrypto.backends.cryptography.AES unicrypto.backends.cryptography.RC4 unicrypto.backends.pycryptodomex.DES  unicrypto.backends.pycryptodomex.TDES unicrypto.backends.pycryptodomex.AES unicrypto.backends.pycryptodomex.RC4
+Certipy-gbe:
+    - clone: gbe/Certipy
+    - pip: cffi pywin32 sspilib h11
+    - build_py:
+        certipy:
+            py: certipy\entry
+            errorExpected: 0
+            hiddenimports: aardwolf cryptography cffi cryptography.hazmat.backends.openssl cryptography.hazmat.bindings._openssl unicrypto unicrypto.backends.pycryptodome.DES  unicrypto.backends.pycryptodome.TDES unicrypto.backends.pycryptodome.AES unicrypto.backends.pycryptodome.RC4 unicrypto.backends.pure.DES unicrypto.backends.pure.TDES unicrypto.backends.pure.AES unicrypto.backends.pure.RC4 unicrypto.backends.cryptography.DES unicrypto.backends.cryptography.TDES unicrypto.backends.cryptography.AES unicrypto.backends.cryptography.RC4 unicrypto.backends.pycryptodomex.DES  unicrypto.backends.pycryptodomex.TDES unicrypto.backends.pycryptodomex.AES unicrypto.backends.pycryptodomex.RC4 sspilib hh cffi pywin32 
+
 
 SharpDPAPI:
     - clone: GhostPack/SharpDPAPI
