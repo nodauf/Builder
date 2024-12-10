@@ -286,6 +286,7 @@ impacket:
         ticketer: [ ticketer, 0 ]
         wmiexec: [ wmiexec, 0 ]
         atexec: [ atexec, 0 ]
+        netview: [ netview, 0 ]
         impacker:
             py: impacker.py
             outputBin: impacker.exe
